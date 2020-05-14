@@ -1,0 +1,11 @@
+import numpy as np
+b = np.linspace(5,20,24)
+print("\n",b,"\n")
+b=b.reshape(4,6)
+print("Ans-1\n",b,"\n")
+[r1,r2,r3,r4] = np.vsplit(b,(1,2,3))
+[c1,c2,c3,c4,c5,c6] = np.hsplit(r1,(1,2,3,4,5))
+[d1,d2,d3,d4,d5,d6] = np.hsplit(r4,(1,2,3,4,5))
+final_array = np.array([c3,c5,d3,d5])
+final_array = final_array.reshape(2,2)
+print("Ans-2\n",final_array,"\n")
