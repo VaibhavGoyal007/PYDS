@@ -1,0 +1,13 @@
+import numpy as np
+b = np.linspace(5,20,24)
+print("\n",b,"\n")
+b=b.reshape(4,6)
+print("Ans-1")
+[s1,s2,s3,s4,s5,s6] = np.hsplit(b,(1,2,3,4,5))
+first_array = np.hstack((s1,s2,s4,s6))
+print(first_array)
+[r1,r2,r3,r4] = np.vsplit(b,(1,2,3))
+[c1,c2,c3,c4,c5,c6] = np.hsplit(r1,(1,2,3,4,5))
+[d1,d2,d3,d4,d5,d6] = np.hsplit(r4,(1,2,3,4,5))
+second_array = np.array([c3,c5,d3,d5]).reshape(2,2)
+print("Ans-2\n",second_array,"\n")
